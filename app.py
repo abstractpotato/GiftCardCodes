@@ -29,6 +29,7 @@ def create(filename, font_path):
     position = 0
     for code in codes:
         if code == "":
+            print(code)
             continue
         position += padding
         img = draw_code(img, code, font , 50, position)
