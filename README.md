@@ -1,5 +1,5 @@
 # GiftCardCodes
-This is a guide with added code to make the process of creating gift cards on Cardano using the [Starch GiveawayApp](https://starch.one/apps).
+These are resources used to create gift cards on Cardano using the [Starch GiveawayApp](https://starch.one/apps).
 
 Use the Python Script above to generate the image that can then be sent to the PRT Mini Sticker Printer. (requires [Pillow](https://pypi.org/project/pillow/))
 
