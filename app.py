@@ -16,7 +16,7 @@ def draw_code(img, code, font, x, y):
     return img
 
 def create(filename, font_path):
-    codes = open(filename).read().split("\n")[1:-1]
+    codes = open(filename).read().split("\n")[1:]
 
     padding = 20
     font_size = 32
@@ -27,9 +27,11 @@ def create(filename, font_path):
     font = ImageFont.truetype(font_path, font_size)
 
     position = 0
-    for i in range(len(codes)):
+    for code in codes:
+        if code == "":
+            continue
         position += padding
-        img = draw_code(img, codes[i], font , 70, position)
+        img = draw_code(img, code, font , 50, position)
         position += font_size + (padding * 2)
         img = draw_line(img, width, position)
     img.show()
