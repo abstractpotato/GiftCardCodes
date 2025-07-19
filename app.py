@@ -11,12 +11,11 @@ def draw_line(img, width, y):
 
 def draw_code(img, code, font, x, y):
     img_draw = ImageDraw.Draw(img)
-    print(code)
     img_draw.text((x, y), code, fill=(0, 0, 0), font=font)
     return img
 
 def create(filename, font_path):
-    codes = open(filename).read().split("\n")[1:]
+    codes = open(filename).read().split("\n")[1:-1]
 
     padding = 20
     font_size = 32
@@ -28,11 +27,8 @@ def create(filename, font_path):
 
     position = 0
     for code in codes:
-        if code == "":
-            print(code)
-            continue
         position += padding
-        img = draw_code(img, code, font , 50, position)
+        img = draw_code(img, code, font , 70, position)
         position += font_size + (padding * 2)
         img = draw_line(img, width, position)
     img.show()
